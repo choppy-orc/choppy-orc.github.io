@@ -332,5 +332,267 @@
 <script type="text/javascript" src="/assets/js/main.js"></script>
 <script type="text/javascript" src="/assets/js/custom.js"></script>
 <script type="text/javascript" src="/assets/js/search.js"></script>
+
+<!-- Popup Advertisement -->
+<div id="adPopup" class="ad-popup">
+    <div class="ad-popup-content">
+        <div class="ad-popup-header">
+            <h3>🎮 Khám phá thêm game mới!</h3>
+            <button class="ad-close-btn" onclick="closeAdPopup()">&times;</button>
+        </div>
+        <div class="ad-popup-body">
+            <div class="ad-image">
+                <img src="/assets/images/ballbang_logo.png" alt="Game Website" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="ad-text">
+                <h4>🎯 Website Game của tôi</h4>
+                <p>Khám phá hàng trăm game miễn phí, đa dạng thể loại từ Action, Racing, Puzzle đến Strategy!</p>
+                <div class="ad-features">
+                    <span class="feature">🚀 Game mới mỗi tuần</span>
+                    <span class="feature">💎 Chất lượng cao</span>
+                    <span class="feature">📱 Responsive design</span>
+                </div>
+            </div>
+        </div>
+        <div class="ad-popup-footer">
+            <a href="https://your-website.com" target="_blank" class="ad-visit-btn">Ghé thăm ngay</a>
+            <button class="ad-later-btn" onclick="closeAdPopup()">Để sau</button>
+        </div>
+    </div>
+</div>
+
+<style>
+.ad-popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.ad-popup-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.4s ease-out;
+    overflow: hidden;
+}
+
+.ad-popup-header {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ad-popup-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.ad-close-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.ad-close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.ad-popup-body {
+    padding: 25px;
+    text-align: center;
+}
+
+.ad-image {
+    margin-bottom: 20px;
+}
+
+.ad-text h4 {
+    color: white;
+    margin: 0 0 15px 0;
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+.ad-text p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 20px 0;
+    line-height: 1.6;
+    font-size: 1em;
+}
+
+.ad-features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.ad-popup-footer {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ad-visit-btn, .ad-later-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.ad-visit-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+}
+
+.ad-visit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.ad-later-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.ad-later-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .ad-popup-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .ad-popup-header h3 {
+        font-size: 1.2em;
+    }
+    
+    .ad-popup-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .ad-visit-btn, .ad-later-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+</style>
+
+<script>
+// Show popup after 5 seconds
+setTimeout(function() {
+    showAdPopup();
+}, 5000);
+
+// Show popup when user tries to leave the page
+document.addEventListener('mouseleave', function(e) {
+    if (e.clientY <= 0) {
+        showAdPopup();
+    }
+});
+
+// Show popup when user scrolls to bottom
+window.addEventListener('scroll', function() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        setTimeout(function() {
+            showAdPopup();
+        }, 1000);
+    }
+});
+
+function showAdPopup() {
+    const popup = document.getElementById('adPopup');
+    if (popup && popup.style.display === 'none') {
+        popup.style.display = 'block';
+        // Prevent body scroll when popup is open
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeAdPopup() {
+    const popup = document.getElementById('adPopup');
+    popup.style.display = 'none';
+    // Restore body scroll
+    document.body.style.overflow = 'auto';
+}
+
+// Close popup when clicking outside
+document.getElementById('adPopup').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeAdPopup();
+    }
+});
+
+// Close popup with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeAdPopup();
+    }
+});
+</script>
+
 </body>
 </html>
